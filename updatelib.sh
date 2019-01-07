@@ -13,7 +13,7 @@ fi
 echo "Starting installation of Portal..."
 sudo yum update -y
 sudo yum groupinstall "Development Tools" -y
-sudo yum install screen -y
+sudo yum install screen vim -y
 
 # Installing needed dependencies and setting ulimit
 echo "Installing  needed dependencies for Portal..."
