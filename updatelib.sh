@@ -14,6 +14,7 @@ echo "Starting installation of Portal..."
 sudo yum update -y
 sudo yum groupinstall "Development Tools" -y
 sudo yum install screen vim -y
+sudo yum install yum-utils make wget -y
 
 # Installing needed dependencies and setting ulimit
 echo "Installing  needed dependencies for Portal..."
@@ -22,12 +23,14 @@ sudo rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 sudo yum update -y
 sudo yum install openssl-devel zlib-devel pcre* -y
 sudo yum install  gcc openssl openssl-devel pcre-devel git unzip wget -y
+sudo yum-builddep python -y
 sudo sed -i '61 i *	soft	nofile	99999' /etc/security/limits.conf
 sudo sed -i '62 i *	hard	nofile	99999' /etc/security/limits.conf
 sudo sed -i '63 i *	soft	noproc	20000' /etc/security/limits.conf
 sudo sed -i '64 i *	hard	noproc	20000' /etc/security/limits.conf
 
 rm -rf /etc/security/limits.d/20-nproc.conf
+
 sudo touch /etc/security/limits.d/20-nproc.conf
 sudo sed -i '1 i *     soft    nofile  99999' /etc/security/limits.d/20-nproc.conf
 sudo sed -i '2 i *     hard    nofile  99999' /etc/security/limits.d/20-nproc.conf
