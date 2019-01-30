@@ -1,7 +1,7 @@
 #!/bin/bash
 #Script made for OS Update and lip installtion
 #Author: Vinod.N K
-#Usage: Nginx, Java, PhP, OpenSSL, Gcc, Ulimit for portal installation
+#Usage: Os Update , Lib update and Ulimit for OS installation
 #Distro : Linux -Centos, Rhel, and any fedora
 #Check whether root user is running the script
 if [ "$(id -u)" != "0" ]; then
