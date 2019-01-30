@@ -13,8 +13,7 @@ fi
 echo "Starting installation of Portal..."
 sudo yum update -y
 sudo yum groupinstall "Development Tools" -y
-sudo yum install screen vim -y
-sudo yum install yum-utils make wget -y
+sudo yum install yum-utils net-tools screen vim make wget -y
 
 # Installing needed dependencies and setting ulimit
 echo "Installing  needed dependencies for Portal..."
@@ -39,8 +38,4 @@ sudo sed -i '4 i *     hard    noproc  20000' /etc/security/limits.d/20-nproc.co
 
 echo "fs.file-max=6816768" >> /etc/sysctl.conf
 
-sudo sysctl -w fs.file-max=6816768
-
 sudo sysctl -p
-
-sudo reboot
