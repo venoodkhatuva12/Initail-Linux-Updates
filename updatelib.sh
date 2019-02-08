@@ -10,7 +10,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # Update yum repos.and install development tools
-echo "Starting installation of Portal..."
+echo "Updating the OS"
 sudo yum update -y
 sudo yum groupinstall "Development Tools" -y
 sudo yum install yum-utils net-tools screen vim make wget -y
