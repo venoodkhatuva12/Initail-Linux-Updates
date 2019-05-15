@@ -19,6 +19,7 @@ sudo yum install yum-utils net-tools screen vim make wget -y
 echo "Installing  needed dependencies for Portal..."
 sudo yum install epel-release -y
 sudo rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+sed -i 's/SELINUX=permissive/SELINUX=disabled/g' /etc/sysconfig/selinux
 sudo yum update -y
 sudo yum install openssl-devel zlib-devel pcre* -y
 sudo yum install  gcc openssl openssl-devel pcre-devel git unzip wget -y
