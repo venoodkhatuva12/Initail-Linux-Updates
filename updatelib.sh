@@ -35,10 +35,10 @@ sudo sed -i '64 i *	hard	noproc	20000' /etc/security/limits.conf
 rm -rf /etc/security/limits.d/20-nproc.conf
 
 sudo touch /etc/security/limits.d/20-nproc.conf
-sudo sed -i '1 i *     soft    nofile  99999' /etc/security/limits.d/20-nproc.conf
-sudo sed -i '2 i *     hard    nofile  99999' /etc/security/limits.d/20-nproc.conf
-sudo sed -i '3 i *     soft    noproc  20000' /etc/security/limits.d/20-nproc.conf
-sudo sed -i '4 i *     hard    noproc  20000' /etc/security/limits.d/20-nproc.conf
+sudo echo '*     soft    nofile  99999
+*     hard    nofile  99999
+*     soft    noproc  20000
+*     hard    noproc  20000' > /etc/security/limits.d/20-nproc.conf
 
 echo "fs.file-max=6816768" >> /etc/sysctl.conf
 
